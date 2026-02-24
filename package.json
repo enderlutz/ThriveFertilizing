@@ -1,0 +1,20 @@
+{
+  "name": "thrive-fertilizing",
+  "version": "0.1.0",
+  "description": "AI-powered business command center for fertilizing operations",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Setup development environment first'",
+    "build": "echo 'Setup build process'",
+    "test": "echo 'Setup testing framework'",
+    "migrate": "echo 'Setup database migrations'"
+  },
+  "keywords": [
+    "ai",
+    "business-automation",
+    "crm",
+    "dashboard"
+  ],
+  "author": "",
+  "license": "PROPRIETARY"
+}
