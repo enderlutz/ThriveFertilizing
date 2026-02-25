@@ -4,10 +4,11 @@
   "description": "AI-powered business command center for fertilizing operations",
   "private": true,
   "scripts": {
-    "dev": "echo 'Setup development environment first'",
-    "build": "echo 'Setup build process'",
-    "test": "echo 'Setup testing framework'",
-    "migrate": "echo 'Setup database migrations'"
+    "dev": "concurrently -n frontend,backend -c cyan,green \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd src/frontend && npm run dev",
+    "dev:backend": "cd src/backend && venv/bin/uvicorn main:app --reload --port 4000",
+    "stop:backend": "lsof -ti:4000 | xargs kill -9 2>/dev/null || true",
+    "migrate": "cd src/backend && venv/bin/alembic upgrade head"
   },
   "keywords": [
     "ai",
@@ -16,5 +17,8 @@
     "dashboard"
   ],
   "author": "",
-  "license": "PROPRIETARY"
+  "license": "PROPRIETARY",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }
